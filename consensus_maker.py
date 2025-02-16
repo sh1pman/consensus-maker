@@ -193,7 +193,7 @@ while len(list(cons_dct)) < cons_count:
 
                     if '<' in alt_variant: ##Checking if alt is a structural variant...
                         symbolic= True
-                        svlen=allele_frequency=float(next(i for i in info_field if 'SVLEN=' in i)[6:])
+                        svlen=int(next(i for i in info_field if 'SVLEN=' in i)[6:])
                     else:        
                         new_string_list[coord-cons_start-chrom_starts[chrom]]=alt_variant ##Inserting simple variant...    
 
@@ -203,7 +203,7 @@ while len(list(cons_dct)) < cons_count:
                             new_string_list[min(coord-chrom_starts[chrom]-cons_start+i,cons_length+cons_extra_bases-1)]=''
 
                     ##Deleting symbolic deletions... 
-                    if '<DEL>' in alt_variant:
+                    if 'DEL' in alt_variant:
                         for i in range(svlen):
                             new_string_list[min(coord-chrom_starts[chrom]-cons_start+i,cons_length+cons_extra_bases-1)]=''
               
