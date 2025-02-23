@@ -2,7 +2,7 @@ Consensus maker
 
 This tool makes consensuses from an input FASTA file and a VCF file containing variant calls.
 
-Currently does not support  symbolic structural variant alleles other than <DEL>.
+Currently does not support  symbolic structural variant alleles other than DEL.
 
 usage: consensus_maker.py [-h] [-c CONS_COUNT] [-l CONS_LENGTH] [-m MIN_FREQ] [-s] [-e CONS_EXTRA_BASES] [--version] input_fasta vcf output_fasta
 
